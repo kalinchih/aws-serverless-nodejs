@@ -30,3 +30,20 @@
 ## 4. Verify the POST API
 
 - [client code](client/index.js)
+
+```
+// Request header:
+Content-Type: application/json
+
+// Request body:
+{"name":"Mary", "age":16}
+
+// Response body:
+{
+    "statusCode": 200,
+    "payload": {
+        "name": "Mary",
+        "age": 16
+    }
+}
+```

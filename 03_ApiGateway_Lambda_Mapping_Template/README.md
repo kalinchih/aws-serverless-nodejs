@@ -39,6 +39,7 @@ Content-type:application/json;charset=utf8
 // Request body:
 { "name": "Mary", "age": 16 }
 
+// Response body:
 { "yourAge": 16 }
 ```
 
