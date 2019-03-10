@@ -1,12 +1,12 @@
 # Mapping Templates
 
-## 1. Use Lambda Proxy integration in Integration Request
+## Solution 1: Use Lambda Proxy integration in Integration Request
 
 - Disable (default): event = request body
   - Recommend with [mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html) to make Lambda focus on logic
 - Enable: event = raw request & some AWS information
 
-## 2. Mapping Template in Integration Request/Response
+## Solution 2: Mapping Template in Integration Request/Response
 
 [Lambda code](lambda/kalin-compare_yourself-create_comparison/index.js)
 
@@ -43,7 +43,7 @@ Content-type:application/json;charset=utf8
 { "yourAge": 16 }
 ```
 
-## 3. Template Example
+## More Template Example
 
 ```
 // Use this template
