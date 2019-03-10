@@ -1,16 +1,20 @@
-# Mapping Templates
+# Mapping Templates & Model
 
-## Solution 1: Use Lambda Proxy integration in Integration Request
+## Mapping Templates
 
+Lambda only gets the raw request body via 'event'. How to get headers or the necessary parameters which Lambda needs?
+
+### Solution 1: Use Lambda Proxy integration in Integration Request
+
+- Enable: event = raw request & some AWS information
 - Disable (default): event = request body
   - Recommend with [mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html) to make Lambda focus on logic
-- Enable: event = raw request & some AWS information
 
-## Solution 2: Mapping Template in Integration Request/Response
+### Solution 2: Mapping Template in Integration Request/Response
 
 [Lambda code](lambda/kalin-compare_yourself-create_comparison/index.js)
 
-### API Gateway Mapping Template (request)
+#### 2-1. API Gateway Mapping Template (request)
 
 - Request body passthrough: Never
 - Content-Type: application/json
@@ -22,7 +26,7 @@
 }
 ```
 
-### API Gateway Mapping Template (reqponse)
+#### 2-2. API Gateway Mapping Template (response)
 
 ```
 {
@@ -30,7 +34,7 @@
 }
 ```
 
-### Verify
+#### 2-3. Verify
 
 ```
 // Request header:
@@ -43,7 +47,7 @@ Content-type:application/json;charset=utf8
 { "yourAge": 16 }
 ```
 
-## More Template Example
+### Template Example
 
 ```
 // Use this template
@@ -73,4 +77,8 @@ Content-type:application/json;charset=utf8
 
 ```
 
-- Also see: [Apache Velocity Language](http://velocity.apache.org/)
+- Also see: Java-based template engine: [Apache Velocity Language](http://velocity.apache.org/)
+
+## Model
+
+Using Model to define and validate the request/response interface.
