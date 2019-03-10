@@ -6,11 +6,11 @@ exports.handler = async event => {
   // event = request body
   const response = {
     statusCode: 200,
-    payload: event
+    payload: event.reqBody
   };
   return response;
 
-  // Enable "Use Lambda Proxy integration"
+  // Disable "Use Lambda Proxy integration"
   // event = raw request & some AWS information
   // return {headers: {'Access-Control-Allow-Origin': '*'}};
 };

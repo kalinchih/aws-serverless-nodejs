@@ -4,6 +4,7 @@
 
 - Function name: kalin-compare_yourself-create_comparison
 - Runtime: Node.js 8.10
+- [Lambda code](lambda/kalin-compare_yourself-create_comparison/index.js)
 
 ## 2. [API Gateway service] Create POST method and use this Lambda Function
 
@@ -28,19 +29,4 @@
 
 ## 4. Verify the POST API
 
-```
-//// run in https://codepen.io
-
-const url =
-  "https://API_NAME.execute-api.ap-northeast-1.amazonaws.com/dev/comparisons";
-
-//// ES6
-fetch(url, {
-  method: "POST" // *GET, POST, PUT, DELETE, etc.
-  //mode: 'cors' // no-cors, cors, *same-origin
-})
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(error => console.log(error.name, error.message));
-
-```
+- [client code](client/index.js)
