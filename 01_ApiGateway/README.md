@@ -10,6 +10,7 @@ Create a Mock API
 ## 2. Create Resource
 
 - Resource Name: comparisons
+- Enable API Gateway CORS: checked
 - ![Screenshot](2_create_resource.png)
 
 ## 3. Create Method
