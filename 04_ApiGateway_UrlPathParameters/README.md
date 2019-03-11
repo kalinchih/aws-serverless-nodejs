@@ -15,11 +15,25 @@
 - Resource Path: /books/{isbn}
 - Enable API Gateway CORS: checked
 
-## 3. [API Gateway] Create GET Method
+## 3-1. [API Gateway] Create GET Method (Use Lambda Proxy integration)
 
 - Integration type: Lambda Function
 - Use Lambda Proxy integration: checked
 - Lambda Function: kalin-bookshop-get_one_book
+
+## 3-2. [API Gateway] Create GET Method (Use [Mapping Template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html))
+
+- Integration type: Lambda Function
+- Use Lambda Proxy integration: unchecked
+- Lambda Function: kalin-bookshop-get_one_book
+- Integration Request:
+  - Mapping Templates > Request body passthrough > Never > application/json:
+  ```
+  {
+    "isbn": "$input.params('isbn')",
+    "reqBody" : $input.json('$')
+  }
+  ```
 
 ## 4. [API Gateway] Check URL Path Parameters in 'Method Request'
 
