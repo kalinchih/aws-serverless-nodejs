@@ -30,21 +30,32 @@ Lambda only gets the raw request body via 'event'. How to get headers or the nec
 
 ```
 {
-  "yourAge" : $input.json('$.payload.age')
+  "book" : $input.json('$.payload')
 }
 ```
 
-#### 2-3. Verify
+#### 2-3. Verify in Postman
 
 ```
 // Request header:
 Content-type:application/json;charset=utf8
 
 // Request body:
-{ "name": "Mary", "age": 16 }
+{
+  "name": "Refactoring: Improving the Design of Existing Code",
+  "authors": ["Martin Fowler", "Kent Beck"]
+}
 
 // Response body:
-{ "yourAge": 16 }
+{
+    "book": {
+        "name": "Refactoring: Improving the Design of Existing Code",
+        "authors": [
+            "Martin Fowler",
+            "Kent Beck"
+        ]
+    }
+}
 ```
 
 ### Template Example

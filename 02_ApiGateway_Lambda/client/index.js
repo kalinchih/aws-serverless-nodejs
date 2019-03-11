@@ -20,9 +20,9 @@ fetch(url, {
   .catch(error => console.log(error.name, error.message));
 
 //// ES5
-var xhr = new XMLHttpRequest();
-xhr.open("POST", url);
-xhr.onreadystatechange = function(event) {
-  console.log(event.target);
-};
-xhr.send();
+// var xhr = new XMLHttpRequest();
+// xhr.open("POST", url);
+// xhr.onreadystatechange = function(event) {
+//   console.log(event.target);
+// };
+// xhr.send();

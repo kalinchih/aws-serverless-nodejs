@@ -28,23 +28,26 @@
 - Allow JS runs in 'https://s.codepen.io' to invoke this API
 - ![Screenshot](3_cors_integration_response.png)
 
-## 4. Verify the POST API
+## 4. Verify on https://codepen.io/
 
 - [client code](client/index.js)
 
 ```
 // Request header:
-Content-Type: application/json
+Content-Type: application/json;charset=utf8
 
 // Request body:
-{"name":"Mary", "age":16}
+{
+  "name": "Refactoring: Improving the Design of Existing Code",
+  "authors": ["Martin Fowler", "Kent Beck"]
+}
 
 // Response body:
 {
-    "statusCode": 200,
-    "payload": {
-        "name": "Mary",
-        "age": 16
-    }
+  "statusCode": 200,
+  "payload": {
+    "name": "Refactoring: Improving the Design of Existing Code",
+    "authors": ["Martin Fowler", "Kent Beck"]
+  }
 }
 ```
