@@ -4,17 +4,18 @@
 
 Lambda only gets the raw request body via 'event'. How to get headers or the necessary parameters which Lambda needs?
 
-### Solution 1: Use Lambda Proxy integration in Integration Request
+- Solution 1: Use Lambda Proxy integration in Integration Request
 
-- Enable: event = raw request & some AWS information
-- Disable (default): event = request body
-  - Recommend with [mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html) to make Lambda focus on logic
+  - Enable: event = raw request & some AWS information
+  - Disable (default): event = request body
+    - Recommend with [mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html) to make Lambda focus on logic
 
-### Solution 2: Mapping Template in Integration Request/Response
+- Solution 2: Mapping Template in Integration Request/Response
+  - [Lambda code](lambda/kalin-bookshop-create_book/index.js)
 
-[Lambda code](lambda/kalin-bookshop-create_book/index.js)
+## Transform input/output interface by Mapping Template
 
-#### 2-1. API Gateway Mapping Template (request)
+### 1. API Gateway Mapping Template (request)
 
 - Request body passthrough: Never
 - Content-Type: application/json
@@ -26,7 +27,7 @@ Lambda only gets the raw request body via 'event'. How to get headers or the nec
 }
 ```
 
-#### 2-2. API Gateway Mapping Template (response)
+### 2. API Gateway Mapping Template (response)
 
 ```
 {
@@ -34,7 +35,7 @@ Lambda only gets the raw request body via 'event'. How to get headers or the nec
 }
 ```
 
-#### 2-3. Verify in Postman
+### 3. Verify in Postman
 
 ```
 // Request header:
@@ -58,7 +59,7 @@ Content-type:application/json;charset=utf8
 }
 ```
 
-### Template Example
+### More Template Examples
 
 ```
 // Use this template

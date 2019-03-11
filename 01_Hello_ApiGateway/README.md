@@ -28,7 +28,13 @@ Create a Mock API
 - ![Screenshot](5_integration_response.png)
 
 ```
-{ "name": "Thinking in Java (4th Edition)", "authors": ["Bruce Eckel"] }
+[
+  { "name": "Thinking in Java (4th Edition)", "authors": ["Bruce Eckel"] },
+  {
+    "name": "Refactoring: Improving the Design of Existing Code",
+    "authors": ["Martin Fowler", "Kent Beck"]
+  }
+]
 ```
 
 ## 6. Deploy API
