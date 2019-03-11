@@ -4,12 +4,12 @@ Create a Mock API
 
 ## 1. Create API
 
-- API name: kalin-compare_yourself
+- API name: kalin-bookshop
 - ![Screenshot](1_create_api.png)
 
 ## 2. Create Resource
 
-- Resource Name: comparisons
+- Resource Name: books
 - Enable API Gateway CORS: checked
 - ![Screenshot](2_create_resource.png)
 
@@ -28,7 +28,7 @@ Create a Mock API
 - ![Screenshot](5_integration_response.png)
 
 ```
-{"message":"hello"}
+{ "name": "Thinking in Java (4th Edition)", "author": "Bruce Eckel" }
 ```
 
 ## 6. Deploy API
