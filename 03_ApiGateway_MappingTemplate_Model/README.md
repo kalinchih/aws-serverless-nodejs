@@ -12,7 +12,7 @@ Lambda only gets the raw request body via 'event'. How to get headers or the nec
 
 ### Solution 2: Mapping Template in Integration Request/Response
 
-[Lambda code](lambda/kalin-compare_yourself-create_comparison/index.js)
+[Lambda code](lambda/kalin-bookshop-create_book/index.js)
 
 #### 2-1. API Gateway Mapping Template (request)
 
