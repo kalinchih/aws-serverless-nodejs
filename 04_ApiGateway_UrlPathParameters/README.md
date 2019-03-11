@@ -21,6 +21,11 @@
 - Use Lambda Proxy integration: checked
 - Lambda Function: kalin-bookshop-get_one_book
 
+  ```
+  Lambda code:
+  const { isbn } = event.pathParameters;
+  ```
+
 ## 3-2. [API Gateway] Create GET Method (Use [Mapping Template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html))
 
 - Integration type: Lambda Function
@@ -34,11 +39,16 @@
     "reqBody" : $input.json('$')
   }
   ```
+  ```
+  Lambda code:
+  let isbn: event.isbn
+  ```
 
-## 4. [API Gateway] Check URL Path Parameters in 'Method Request'
+## 4. [API Gateway] Set/check URL Path Parameters in 'Method Request'
 
 - URL Path Parameters:
-  - Name: isbn
+  - Name: isbn (both in 'Method Request' & 'Integration Request')
+  - Mapped from: method.request.path.isbn (in 'Integration Request')
 
 ## 5. Verify on browser
 
