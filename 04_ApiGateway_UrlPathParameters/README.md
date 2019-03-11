@@ -48,6 +48,8 @@ https://API.execute-api.ap-northeast-1.amazonaws.com/dev/books/xyz
 
 Response body:
 {
-  isbn: "xyz"
+  statusCode: 200,
+  payload: { },
+  isbn: "xyzaaa"
 }
 ```
