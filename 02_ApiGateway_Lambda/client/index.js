@@ -1,7 +1,6 @@
 //// run in https://codepen.io
 
-const url =
-  "https://API.execute-api.ap-northeast-1.amazonaws.com/dev/comparisons";
+const url = "https://API.execute-api.ap-northeast-1.amazonaws.com/dev/books";
 
 //// ES6
 fetch(url, {
@@ -10,7 +9,10 @@ fetch(url, {
     "user-agent": "Mozilla/4.0 MDN Example",
     "content-type": "application/json"
   },
-  body: JSON.stringify({ name: "Mary", age: 16 })
+  body: JSON.stringify({
+    name: "Refactoring: Improving the Design of Existing Code",
+    authors: ["Martin Fowler", "Kent Beck"]
+  })
   //mode: 'cors' // no-cors, cors, *same-origin,
 })
   .then(response => response.json())

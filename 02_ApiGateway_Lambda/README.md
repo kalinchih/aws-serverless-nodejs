@@ -2,14 +2,14 @@
 
 ## 1. [Lambda service] Create a Lambda function
 
-- Function name: kalin-compare_yourself-create_comparison
+- Function name: kalin-bookshop-create_book
 - Runtime: Node.js 8.10
-- [Lambda code](lambda/kalin-compare_yourself-create_comparison/index.js)
+- [Lambda code](lambda/kalin-bookshop-create_book/index.js)
 
 ## 2. [API Gateway service] Create POST method and use this Lambda Function
 
 - Integration type: Lambda Function
-- Lambda Function: kalin-compare_yourself-create_comparison
+- Lambda Function: kalin-bookshop-create_book
 - ![Screenshot](2_use_lambda.png)
 
 ## 3. Allow CORS
@@ -25,6 +25,7 @@
 
 ### 3-2. Set Mapping Value of 'Access-Control-Allow-Origin' in "Integration Response"
 
+- Allow JS runs in 'https://s.codepen.io' to invoke this API
 - ![Screenshot](3_cors_integration_response.png)
 
 ## 4. Verify the POST API
